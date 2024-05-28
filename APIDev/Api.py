@@ -12,9 +12,10 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 logging.basicConfig(filename=f'{script_dir}\\filename.log', level=logging.DEBUG,
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 LOG.info(f"script directory: {script_dir}")
-LOG.info(f"DB file: {script_dir}\db.txt")
+LOG.info(f"DB file: {script_dir}\\db.txt")
 
 
+# API Reachability Test 
 @app.route('/')
 def index():
     return jsonify({'name': 'network_engineer',
@@ -85,5 +86,5 @@ def deleteRouter():
         return jsonify({"error":err})
 
 
-if __name__ == "_main_":
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host='127.0.0.1', port=5000)

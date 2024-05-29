@@ -8,19 +8,20 @@ app = Flask(__name__)
 LOG = create_logger(app)
 
 
-script_dir = os.path.dirname(os.path.realpath(__file__))
-logging.basicConfig(filename=f'{script_dir}\\filename.log', level=logging.DEBUG,
+code_folder = os.path.dirname(os.path.realpath(__file__))
+logging.basicConfig(filename=f'{code_folder}\\console.log', level=logging.DEBUG,
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
-LOG.info(f"script directory: {script_dir}")
-LOG.info(f"DB file: {script_dir}\\db.txt")
+LOG.info(f"code folder: {code_folder}")
+LOG.info(f"database file: {code_folder}\\database.txt")
 
 
 # API Reachability Test 
 @app.route('/')
 def index():
+    # This function will be called for GET requests to /
     return jsonify({'name': 'network_engineer',
                     'email': 'network_engineer@path_ne.com',
-                    'locale': 'https://youtube.com'})
+                    'channel': 'http://www.youtube.com/@path_ne'})
 
 
 # GET Method
@@ -29,8 +30,8 @@ def getRouter():
     try:
         hostname = request.args.get('hostname')
         print(hostname)
-        with open(f'{script_dir}\\db.txt', 'r') as f:
-            data = f.read()
+        with open(f'{code_folder}\\database.txt', 'r') as cf:
+            data = cf.read()
             records = json.loads(data)
             for record in records:
                 if record['hostname'] == hostname:
@@ -46,8 +47,8 @@ def AddRouter():
     try:
         record = json.loads(request.data)
         LOG.info(f'inbound record {record}')
-        with open(f'{script_dir}\\db.txt', 'r') as f:
-            data = f.read()
+        with open(f'{code_folder}\\database.txt', 'r') as cf:
+            data = cf.read()
             records = json.loads(data)
         if record in records:
             return jsonify({"status": "Device already exists"}), 200
@@ -55,7 +56,7 @@ def AddRouter():
             records.append(record)
             LOG.info(f"records output {records}")
             LOG.warning(f'router added {record["hostname"]}')
-        with open(f'{script_dir}\\db.txt', 'w') as f:
+        with open(f'{code_folder}\\database.txt', 'w') as f:
             f.write(json.dumps(records, indent=2))
         return jsonify(record), 201
     except Exception as err:
@@ -70,15 +71,15 @@ def deleteRouter():
     try:
         record = json.loads(request.data)
         new_records = []
-        with open(f'{script_dir}\\db.txt', 'r') as f:
-            data = f.read()
+        with open(f'{code_folder}\\database.txt', 'r') as cf:
+            data = cf.read()
             records = json.loads(data)
             for r in records:
                 if r['hostname'] == record['hostname']:
                     LOG.warning(f'Deleted {r["hostname"]}')
                     continue
                 new_records.append(r)
-        with open(f'{script_dir}\\db.txt', 'w') as f:
+        with open(f'{code_folder}\\database.txt', 'w') as f:
             f.write(json.dumps(new_records, indent=2))
         return jsonify(record), 204
     except Exception as err:

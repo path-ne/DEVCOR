@@ -21,7 +21,8 @@ def index():
     # This function will be called for GET requests to /
     return jsonify({'name': 'network_engineer',
                     'email': 'network_engineer@path_ne.com',
-                    'channel': 'http://www.youtube.com/@path_ne'})
+                    'channel': 'http://www.youtube.com/@path_ne',
+                    'message': 'GET Request to root URL successful'})
 
 
 # GET Method

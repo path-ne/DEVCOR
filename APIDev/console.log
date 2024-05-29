@@ -4,3 +4,10 @@
  * Running on http://127.0.0.1:5000
 2024-05-29 10:56:51,779 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
 2024-05-29 10:56:59,908 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:56:59] "GET / HTTP/1.1" 200 -
+2024-05-29 10:59:34,843 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:59:34] "GET / HTTP/1.1" 200 -
+2024-05-29 10:59:39,771 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-29 10:59:39,771 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-29 10:59:39,781 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-29 10:59:39,781 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-29 10:59:46,438 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:59:46] "GET / HTTP/1.1" 200 -

@@ -25,62 +25,62 @@ def index():
                     'message': 'GET Request to root URL successful'})
 
 
-# GET Method to receive list of routers, list all devices without hostname argument.
-# @app.route('/routers', methods=['GET'])
-# def getRouter():
-#     try:
-#         hostname = request.args.get('hostname')
-#         #print(hostname)
-#         with open(f'{code_folder}\\database.txt', 'r') as cf:
-#             data = cf.read()
-#             records = json.loads(data)
-#             #print(records)
-#             if (hostname is None) or (hostname == ""):
-#                 LOG.info('All devices shown')
-#                 return jsonify(records), 200
-#             else:
-#                 for record in records:
-#                     #print(f'{record['hostname']}')
-#                     #print(hostname)
-#                     if record['hostname'] == hostname:
-#                         LOG.info(f'{hostname} returned')
-#                         return jsonify(record), 200
-#                 if record['hostname'] != hostname:
-#                     LOG.warning('No matching router')
-#                     return jsonify({"response": "No match"}), 200
-#     except Exception as err:
-#         LOG.error(f'Error during GET {err}')
-#         return jsonify({"error": err}), 401
-
-
-# GET Method to receive list of routers, sends error without hostname argument
+#GET Method to receive list of routers, list all devices without hostname argument.
 @app.route('/routers', methods=['GET'])
 def getRouter():
     try:
         hostname = request.args.get('hostname')
         #print(hostname)
-        if (hostname is None) or (hostname == ""):
-                LOG.warning('Missing the hostname')
-                raise ValueError 
         with open(f'{code_folder}\\database.txt', 'r') as cf:
             data = cf.read()
             records = json.loads(data)
             #print(records)
-            for record in records:
-                #print(f'{record['hostname']}')
-                #print(hostname)
-                if record['hostname'] == hostname:
-                    LOG.info(f'{hostname} returned')
-                    return jsonify(record), 200
+            if (hostname is None) or (hostname == ""):
+                LOG.info('All devices shown')
+                return jsonify(records), 200
+            else:
+                for record in records:
+                    #print(f'{record['hostname']}')
+                    #print(hostname)
+                    if record['hostname'] == hostname:
+                        LOG.info(f'{hostname} returned')
+                        return jsonify(record), 200
                 if record['hostname'] != hostname:
                     LOG.warning('No matching router')
                     return jsonify({"response": "No match"}), 200
-    except ValueError:
-        LOG.error("NO HOSTNAME SPECIFIED ON REQUEST")
-        return jsonify({"error": "Missing the hostname, mate"}), 400
     except Exception as err:
         LOG.error(f'Error during GET {err}')
         return jsonify({"error": err}), 401
+
+
+# GET Method to receive list of routers, sends error without hostname argument
+# @app.route('/routers', methods=['GET'])
+# def getRouter():
+#     try:
+#         hostname = request.args.get('hostname')
+#         #print(hostname)
+#         if (hostname is None) or (hostname == ""):
+#                 LOG.warning('Missing the hostname')
+#                 raise ValueError 
+#         with open(f'{code_folder}\\database.txt', 'r') as cf:
+#             data = cf.read()
+#             records = json.loads(data)
+#             #print(records)
+#             for record in records:
+#                 #print(f'{record['hostname']}')
+#                 #print(hostname)
+#                 if record['hostname'] == hostname:
+#                     LOG.info(f'{hostname} returned')
+#                     return jsonify(record), 200
+#                 if record['hostname'] != hostname:
+#                     LOG.warning('No matching router')
+#                     return jsonify({"response": "No match"}), 200
+#     except ValueError:
+#         LOG.error("NO HOSTNAME SPECIFIED ON REQUEST")
+#         return jsonify({"error": "Missing the hostname, mate"}), 400
+#     except Exception as err:
+#         LOG.error(f'Error during GET {err}')
+#         return jsonify({"error": err}), 401
 
 
 @app.route('/routers', methods=['POST'])

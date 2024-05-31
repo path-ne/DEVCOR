@@ -125,7 +125,7 @@ def deleteRouter():
         return jsonify(record), 204
     except Exception as err:
         LOG.error(f'Error raised {err}')
-        return jsonify({"error":err})
+        return jsonify({"error": err})
 
 
 if __name__ == "__main__":

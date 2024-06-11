@@ -562,3 +562,14 @@ TypeError: Object of type KeyError is not JSON serializable
 2024-05-30 23:16:20,617 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
 2024-05-30 23:16:49,266 INFO Api Thread-1 (process_request_thread) : All devices shown
 2024-05-30 23:16:49,267 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 23:16:49] "GET /routers HTTP/1.1" 200 -
+2024-06-11 01:04:14,516 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-06-11 01:04:14,517 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-06-11 01:04:14,530 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-11 01:04:14,530 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 01:04:20,992 INFO Api Thread-1 (process_request_thread) : inbound record {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}
+2024-06-11 01:04:20,993 INFO Api Thread-1 (process_request_thread) : records output [{'hostname': 'SW1', 'ipaddr': '10.10.10.1'}, {'hostname': 'SW2', 'ipaddr': '10.10.10.2'}, {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}]
+2024-06-11 01:04:20,993 WARNING Api Thread-1 (process_request_thread) : router added R1
+2024-06-11 01:04:20,994 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 01:04:20] "[35m[1mPOST /routers HTTP/1.1[0m" 201 -
+2024-06-11 01:04:27,144 INFO Api Thread-2 (process_request_thread) : All devices shown
+2024-06-11 01:04:27,145 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 01:04:27] "GET /routers HTTP/1.1" 200 -

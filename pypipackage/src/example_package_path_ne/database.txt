@@ -1,0 +1,15 @@
+[
+  {
+    "hostname": "SW1",
+    "ipaddr": "10.10.10.1"
+  },
+  {
+    "hostname": "SW2",
+    "ipaddr": "10.10.10.2"
+  },
+  {
+    "hostname": "R1",
+    "ip": "192.168.1.1",
+    "description": "Router 1 test"
+  }
+]

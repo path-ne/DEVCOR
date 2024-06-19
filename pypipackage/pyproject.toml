@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "example_package_path_ne"
+version = "1.0.0"
+authors = [
+  { name="Path_NE", email="Path_NE@Path_NE.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "flask"
+]
+
+[project.urls]
+Homepage = "https://github.com/path-ne/DEVCOR/tree/main/pypipackage"
+Issues = "https://github.com/path-ne/DEVCOR/tree/main/pypipackage/issues"

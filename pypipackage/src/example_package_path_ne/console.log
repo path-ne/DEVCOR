@@ -1,0 +1,575 @@
+2024-05-29 10:56:51,767 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-29 10:56:51,767 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-29 10:56:51,779 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-29 10:56:51,779 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-29 10:56:59,908 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:56:59] "GET / HTTP/1.1" 200 -
+2024-05-29 10:59:34,843 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:59:34] "GET / HTTP/1.1" 200 -
+2024-05-29 10:59:39,771 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-29 10:59:39,771 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-29 10:59:39,781 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-29 10:59:39,781 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-29 10:59:46,438 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [29/May/2024 10:59:46] "GET / HTTP/1.1" 200 -
+2024-05-30 08:36:42,263 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:36:42,263 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:36:42,274 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:36:42,274 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:36:55,406 ERROR Api Thread-1 (process_request_thread) : Error during GET Expecting property name enclosed in double quotes: line 2 column 5 (char 6)
+2024-05-30 08:36:55,407 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 36, in getRouter
+    records = json.loads(data)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 5 (char 6)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 44, in getRouter
+    return jsonify({"error": err}), 401
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type JSONDecodeError is not JSON serializable
+2024-05-30 08:36:55,413 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:36:55] "[35m[1mGET /routers HTTP/1.1[0m" 500 -
+2024-05-30 08:39:34,003 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:39:34,004 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:39:34,016 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:39:34,016 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:39:36,984 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'getRouter' did not return a valid response. The function either returned None or ended without a return statement.
+2024-05-30 08:39:36,986 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:39:36] "[35m[1mGET /routers HTTP/1.1[0m" 500 -
+2024-05-30 08:41:36,524 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:41:36,525 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:41:36,538 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:41:36,538 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:41:58,143 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:41:58,143 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:43:21,135 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:43:21,136 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:43:21,147 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:43:21,147 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:43:44,570 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:43:44,571 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:43:44,584 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:43:44,584 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:45:06,921 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:45:06,922 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:45:06,932 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:45:06,932 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:45:09,777 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:45:09] "GET /routers HTTP/1.1" 200 -
+2024-05-30 08:45:42,325 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:45:42,326 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:45:42,336 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:45:42,336 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:45:44,680 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:45:44] "GET /routers HTTP/1.1" 200 -
+2024-05-30 08:47:15,014 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:47:15,015 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:47:15,026 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:47:15,026 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:47:17,530 INFO Api Thread-1 (process_request_thread) : All devices shown
+2024-05-30 08:47:17,531 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:47:17] "GET /routers HTTP/1.1" 200 -
+2024-05-30 08:47:36,317 INFO Api Thread-2 (process_request_thread) : All devices shown
+2024-05-30 08:47:36,318 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:47:36] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 08:48:16,753 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:48:16,754 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:48:16,767 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:48:16,767 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:48:41,379 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:48:41,380 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:48:41,392 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:48:41,392 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:49:10,566 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:49:10,567 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:49:10,579 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:49:10,579 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:49:33,730 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:49:33,731 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:49:33,743 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:49:33,743 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:49:37,207 INFO Api Thread-6 (process_request_thread) : All devices shown
+2024-05-30 08:49:37,209 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:49:37] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 08:50:24,117 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:50:24,118 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:50:24,128 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:50:24,128 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:50:26,835 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:50:26] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 08:52:54,948 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:52:54,948 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:52:54,958 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:52:54,958 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:52:58,266 ERROR Api Thread-1 (process_request_thread) : Error during GET string indices must be integers, not 'str'
+2024-05-30 08:52:58,267 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 41, in getRouter
+    if record['hostname'] == hostname:
+       ~~~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 46, in getRouter
+    return jsonify({"error": err}), 401
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type TypeError is not JSON serializable
+2024-05-30 08:52:58,273 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:52:58] "[35m[1mGET /routers?hostname=SW1 HTTP/1.1[0m" 500 -
+2024-05-30 08:56:40,148 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:56:40,148 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:56:40,160 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:56:40,160 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:56:43,090 ERROR Api Thread-1 (process_request_thread) : Error during GET string indices must be integers, not 'str'
+2024-05-30 08:56:43,090 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 41, in getRouter
+    if record['hostname'] == hostname:
+       ~~~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 46, in getRouter
+    return jsonify({"error": err}), 401
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type TypeError is not JSON serializable
+2024-05-30 08:56:43,097 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:56:43] "[35m[1mGET /routers?hostname=SW1 HTTP/1.1[0m" 500 -
+2024-05-30 08:57:04,658 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 08:57:04,658 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 08:57:04,669 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 08:57:04,669 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 08:57:06,872 INFO Api Thread-1 (process_request_thread) : All devices shown
+2024-05-30 08:57:06,873 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 08:57:06] "GET /routers HTTP/1.1" 200 -
+2024-05-30 09:01:22,416 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:01:22,416 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:01:22,427 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:01:22,427 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:01:36,152 ERROR Api Thread-1 (process_request_thread) : Error during GET string indices must be integers, not 'str'
+2024-05-30 09:01:36,152 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 41, in getRouter
+    if record['hostname'] == hostname:
+       ~~~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 49, in getRouter
+    return jsonify({"error": err}), 401
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type TypeError is not JSON serializable
+2024-05-30 09:01:36,157 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:01:36] "[35m[1mGET /routers?hostname=SW1 HTTP/1.1[0m" 500 -
+2024-05-30 09:03:31,233 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:03:31,233 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:04:18,084 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:04:18,084 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:04:18,095 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:04:18,095 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:05:22,274 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:05:22,275 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:05:22,286 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:05:22,286 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:07:34,782 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:07:34,782 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:08:38,340 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:08:38,341 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:08:38,352 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:08:38,352 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:09:14,264 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:09:14,265 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:09:14,276 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:09:14,276 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:09:18,381 INFO Api Thread-1 (process_request_thread) : Router returned
+2024-05-30 09:09:18,382 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:09:18] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 09:10:31,389 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:10:31,389 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:10:31,400 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:10:31,400 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:10:34,127 INFO Api Thread-1 (process_request_thread) : SW1 returned
+2024-05-30 09:10:34,127 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:10:34] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 09:10:42,315 WARNING Api Thread-2 (process_request_thread) : No matching router
+2024-05-30 09:10:42,316 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:10:42] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:11:20,682 WARNING Api Thread-3 (process_request_thread) : No matching router
+2024-05-30 09:11:20,683 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:11:20] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:11:22,152 WARNING Api Thread-4 (process_request_thread) : No matching router
+2024-05-30 09:11:22,152 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:11:22] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:11:28,206 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:11:28,206 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:11:28,217 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:11:28,218 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:11:30,155 WARNING Api Thread-1 (process_request_thread) : No matching router
+2024-05-30 09:11:30,155 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:11:30] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:11:42,224 INFO Api Thread-2 (process_request_thread) : SW1 returned
+2024-05-30 09:11:42,225 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:11:42] "GET /routers?hostname=SW1 HTTP/1.1" 200 -
+2024-05-30 09:11:46,591 WARNING Api Thread-3 (process_request_thread) : No matching router
+2024-05-30 09:11:46,592 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:11:46] "GET /routers?hostname=SW3 HTTP/1.1" 200 -
+2024-05-30 09:13:04,232 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:13:04,233 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:13:04,243 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:13:04,243 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:13:07,363 WARNING Api Thread-1 (process_request_thread) : No matching router
+2024-05-30 09:13:07,363 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:13:07] "GET /routers?hostname=SW3 HTTP/1.1" 200 -
+2024-05-30 09:13:16,305 WARNING Api Thread-2 (process_request_thread) : No matching router
+2024-05-30 09:13:16,305 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:13:16] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:13:48,061 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:13:48,062 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:13:48,073 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:13:48,073 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:13:51,441 WARNING Api Thread-1 (process_request_thread) : No matching router
+2024-05-30 09:13:51,441 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:13:51] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:15:35,734 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:15:35,734 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:15:35,745 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:15:35,746 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:15:37,953 WARNING Api Thread-1 (process_request_thread) : No matching router
+2024-05-30 09:15:37,953 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:15:37] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:16:12,238 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:16:12,238 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:16:12,250 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:16:12,250 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:16:14,361 WARNING Api Thread-1 (process_request_thread) : No matching router
+2024-05-30 09:16:14,362 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:16:14] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:17:36,474 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 09:17:36,475 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 09:17:36,488 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 09:17:36,488 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 09:17:40,035 INFO Api Thread-1 (process_request_thread) : SW2 returned
+2024-05-30 09:17:40,035 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:17:40] "GET /routers?hostname=SW2 HTTP/1.1" 200 -
+2024-05-30 09:17:51,952 WARNING Api Thread-2 (process_request_thread) : No matching router
+2024-05-30 09:17:51,953 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:17:51] "GET /routers?hostname=SW3 HTTP/1.1" 200 -
+2024-05-30 09:19:32,609 INFO Api Thread-3 (process_request_thread) : All devices shown
+2024-05-30 09:19:32,610 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [30/May/2024 09:19:32] "GET /routers HTTP/1.1" 200 -
+2024-05-30 10:20:04,407 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 10:20:04,407 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 10:20:04,418 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 10:20:04,418 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 10:20:10,130 WARNING Api Thread-1 (process_request_thread) : Missing the hostname
+2024-05-30 10:20:10,130 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 64, in getRouter
+    raise ValueError
+ValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 79, in getRouter
+    LOG.err("NO HOSTNAME SPECIFIED ON REQUEST")
+    ^^^^^^^
+AttributeError: 'Logger' object has no attribute 'err'
+2024-05-30 10:20:10,134 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 10:20:10] "[35m[1mGET /routers HTTP/1.1[0m" 500 -
+2024-05-30 10:23:03,648 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 10:23:03,649 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 10:23:03,660 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 10:23:03,660 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 10:23:06,028 WARNING Api Thread-1 (process_request_thread) : Missing the hostname
+2024-05-30 10:23:06,028 ERROR Api Thread-1 (process_request_thread) : NO HOSTNAME SPECIFIED ON REQUEST
+2024-05-30 10:23:06,029 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [GET]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 64, in getRouter
+    raise ValueError
+ValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 80, in getRouter
+    return jsonnify({"error": "Missing the hostname, mate"})
+           ^^^^^^^^
+NameError: name 'jsonnify' is not defined. Did you mean: 'jsonify'?
+2024-05-30 10:23:06,033 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 10:23:06] "[35m[1mGET /routers HTTP/1.1[0m" 500 -
+2024-05-30 10:23:20,566 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 10:23:20,566 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 10:23:20,577 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 10:23:20,577 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 10:23:23,044 WARNING Api Thread-1 (process_request_thread) : Missing the hostname
+2024-05-30 10:23:23,045 ERROR Api Thread-1 (process_request_thread) : NO HOSTNAME SPECIFIED ON REQUEST
+2024-05-30 10:23:23,045 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 10:23:23] "GET /routers HTTP/1.1" 200 -
+2024-05-30 21:31:10,459 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 21:31:10,459 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 21:31:10,472 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 21:31:10,472 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 21:31:12,914 INFO Api Thread-1 (process_request_thread) : inbound record {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}
+2024-05-30 21:31:12,914 INFO Api Thread-1 (process_request_thread) : records output [{'hostname': 'SW1', 'ipaddr': '10.10.10.1'}, {'hostname': 'SW2', 'ipaddr': '10.10.10.2'}, {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}]
+2024-05-30 21:31:12,915 WARNING Api Thread-1 (process_request_thread) : router added R1
+2024-05-30 21:31:12,916 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 21:31:12] "[35m[1mPOST /routers HTTP/1.1[0m" 201 -
+2024-05-30 21:52:44,990 WARNING Api Thread-2 (process_request_thread) : Deleted R1
+2024-05-30 21:52:44,991 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [30/May/2024 21:52:44] "[35m[1mDELETE /routers HTTP/1.1[0m" 204 -
+2024-05-30 21:52:48,734 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [30/May/2024 21:52:48] "[35m[1mDELETE /routers HTTP/1.1[0m" 204 -
+2024-05-30 21:52:54,492 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [30/May/2024 21:52:54] "[33mDELETE /router HTTP/1.1[0m" 404 -
+2024-05-30 21:55:09,119 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 21:55:09,120 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 21:55:09,130 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 21:55:09,130 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 21:55:27,247 ERROR Api Thread-1 (process_request_thread) : Error raised 'hostname'
+2024-05-30 21:55:27,248 ERROR Api Thread-1 (process_request_thread) : Exception on /routers [DELETE]
+Traceback (most recent call last):
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 119, in deleteRouter
+    if r['hostname'] == record['hostname']:
+                        ~~~~~~^^^^^^^^^^^^
+KeyError: 'hostname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\Api.py", line 128, in deleteRouter
+    return jsonify({"error": err})
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\House\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type KeyError is not JSON serializable
+2024-05-30 21:55:27,253 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 21:55:27] "[35m[1mDELETE /routers HTTP/1.1[0m" 500 -
+2024-05-30 23:16:20,604 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-05-30 23:16:20,604 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-05-30 23:16:20,617 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-30 23:16:20,617 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-05-30 23:16:49,266 INFO Api Thread-1 (process_request_thread) : All devices shown
+2024-05-30 23:16:49,267 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [30/May/2024 23:16:49] "GET /routers HTTP/1.1" 200 -
+2024-06-11 01:04:14,516 INFO Api MainThread : code folder: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev
+2024-06-11 01:04:14,517 INFO Api MainThread : database file: C:\Users\House\Desktop\LABs\Github\DEVCOR\APIDev\database.txt
+2024-06-11 01:04:14,530 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-11 01:04:14,530 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 01:04:20,992 INFO Api Thread-1 (process_request_thread) : inbound record {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}
+2024-06-11 01:04:20,993 INFO Api Thread-1 (process_request_thread) : records output [{'hostname': 'SW1', 'ipaddr': '10.10.10.1'}, {'hostname': 'SW2', 'ipaddr': '10.10.10.2'}, {'hostname': 'R1', 'ip': '192.168.1.1', 'description': 'Router 1 test'}]
+2024-06-11 01:04:20,993 WARNING Api Thread-1 (process_request_thread) : router added R1
+2024-06-11 01:04:20,994 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 01:04:20] "[35m[1mPOST /routers HTTP/1.1[0m" 201 -
+2024-06-11 01:04:27,144 INFO Api Thread-2 (process_request_thread) : All devices shown
+2024-06-11 01:04:27,145 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 01:04:27] "GET /routers HTTP/1.1" 200 -

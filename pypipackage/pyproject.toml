@@ -5,6 +5,13 @@ build-backend = "hatchling.build"
 [project]
 name = "example_package_path_ne"
 version = "1.0.0"
+dependencies = [
+  "httpx",
+  "Flask",
+  "gidgethub[httpx]>4.0.0",
+  "django>2.1; os_name != 'nt'",
+  "django>2.0; os_name == 'nt'",
+]
 authors = [
   { name="Path_NE", email="Path_NE@Path_NE.com" },
 ]
@@ -15,9 +22,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-]
-dependencies = [
-    "flask"
 ]
 
 [project.urls]
